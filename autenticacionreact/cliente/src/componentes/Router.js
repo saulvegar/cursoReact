@@ -16,11 +16,7 @@ class Router extends Component {
           terminoBusqueda : ''
      }
 
-     componentWillMount() {
-          this.setState({
-               productos : infoProductos
-          })
-     }
+     
 
      busquedaProducto = (busqueda) => {
        if(busqueda.length > 3) {

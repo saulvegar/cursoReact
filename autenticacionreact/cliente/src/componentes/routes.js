@@ -11,7 +11,6 @@ import Header from './Header/Header';
 import Navegacion from './Navegacion/Navegacion';
 import Productos from './Productos/Productos';
 import Nosotros from './Nosotros/Nosotros';
-import Error from './Error/Error';
 import SingleProducto from './SingleProducto/SingleProducto';
 import Contacto from './Contacto/Contacto';
 
@@ -28,11 +27,9 @@ export const makeMainRoutes = () => {
     <Router history={history}>
       <div className="contenedor">
         <Header />
-        <Navegacion />
+        <Navegacion auth={auth} />
         <Route exact path="/" render={(props) => (
           <Productos
-            // productos={resultado}
-            busquedaProducto={this.busquedaProducto}
             auth={auth} {...props}
           />
         )} />
@@ -40,8 +37,6 @@ export const makeMainRoutes = () => {
         <Route exact path="/contacto" component={Contacto} />
         <Route exact path="/productos" render={(props) => (
           <Productos
-            // productos={resultado}
-            busquedaProducto={this.busquedaProducto}
             auth={auth} {...props}
           />
         )} />
